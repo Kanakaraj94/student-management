@@ -40,32 +40,12 @@ public class StudentServiceImpl implements StudentService{
 	@Override
 	public ResponseEntity<Student> updateStudentProfile(StudentProfileUpdateDto profileUpdateDto,Long stuId) {
 		Student student = studentRepository.findById(stuId).orElseThrow(()->new RuntimeException("Student not found for ID : "+stuId));
-//		List<Address> addresses = addressRepository.findByStudent_stuId(stuId);
-//		if(addresses == null || addresses.isEmpty()) {
-//			throw new RuntimeException("Address not found for Student ID : "+stuId);
-//		}
 		
 		student.setEmail(profileUpdateDto.getEmail());
 		student.setMobileNumber(profileUpdateDto.getMobileNumber());
 		student.setFatherName(profileUpdateDto.getFatherName());
 		student.setMotherName(profileUpdateDto.getMotherName());
-		
-		
-//		List<Address> updatedAddress = profileUpdateDto.getAddress();
-//		for(int i=0; i < updatedAddress.size();i++) {
-//			Address newAddress = updatedAddress.get(i);
-//			Address existingAddr = addresses.get(i);
-//			
-//			existingAddr.setAddrType(newAddress.getAddrType());
-//			existingAddr.setStreet(newAddress.getStreet());
-//			existingAddr.setCity(newAddress.getCity());
-//			existingAddr.setState(newAddress.getState());
-//			existingAddr.setZipCode(newAddress.getZipCode());
-//			
-//		}
-		
-		student.setAddress(profileUpdateDto.getAddress());
-		
+		student.setAddress(profileUpdateDto.getAddress());	
 		return ResponseEntity.ok(studentRepository.save(student));
 	}
 
