@@ -1,0 +1,14 @@
+ADMIN
+
+http://localhost:8080/admin/addStudent  		--POST
+http://localhost:8080/admin/addCourse   		--POST
+http://localhost:8080/admin/assignCourse  		--POST
+http://localhost:8080/admin/listStudentByName/Kanak 	--GET
+http://localhost:8080/admin/studentsByCourseId  	--GET
+
+STUDENT
+
+http://localhost:8080/student/updateStudentProfile/1102 --PUT
+http://localhost:8080/student/studentsByCourseName      --POST
+http://localhost:8080/student/studentsByTopic		--POST
+http://localhost:8080/student/leaveCourse		--GET
