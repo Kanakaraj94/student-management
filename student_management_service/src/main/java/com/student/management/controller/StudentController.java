@@ -3,6 +3,7 @@ package com.student.management.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,17 +33,17 @@ public class StudentController {
 		return studentService.updateStudentProfile(profileUpdateDto,stuId);
 	}
 	
-	@GetMapping("/studentsByCourseName")
+	@PostMapping("/studentsByCourseName")
 	public ResponseEntity<?> getAllStudentsByCourseName(@RequestBody RequestDto requestDto) {
 		return studentService.studentsByCourseName(requestDto.getCourseName());
 	}
 	
-	@GetMapping("/studentsByTopic")
+	@PostMapping("/studentsByTopic")
 	public ResponseEntity<?> getAllStudentsByTopic(@RequestBody RequestDto requestDto) {
 		return studentService.studentsByTopic(requestDto.getTopics());
 	}
 
-	@GetMapping("/leaveCourse")
+	@PostMapping("/leaveCourse")
 	public ResponseEntity<?> leaveCourse(@RequestBody RequestDto requestDto) {
 		return studentService.leaveCourse(requestDto.getStuId(),requestDto.getCourseId());
 	}
