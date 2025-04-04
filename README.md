@@ -35,5 +35,5 @@ This project is a **Student Management System** REST API built using **Spring Bo
 
 ### 1. Clone the repository:
 ```bash
-git clone [https://github.com/your-username/student-management-system.git](https://github.com/Kanakaraj94/student-management/tree/master)
+git clone [https://github.com/Kanakaraj94/student-management/tree/master]
 cd student-management-system
